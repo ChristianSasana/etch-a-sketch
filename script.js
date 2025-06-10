@@ -12,6 +12,18 @@ function createGrid() {
     }
     
 }
+function removeGrid() {
+    const rows = document.querySelector(".row");
+    rows.forEach((row) => {
+        container.removeChild(rows)
+        const column = row.querySelectorAll(".column");
+        container.removeChild(rows);
+        column.forEach((col) => {
+            container.removeChild(column);
+        })
+    })
+      
+}
 
 document.addEventListener("DOMContentLoaded", (event) => {
     createGrid();
@@ -30,7 +42,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
 // const btn4 = document.querySelector("#btn4");
-// const btn8 = document.querySelector("#btn8");
+const btn8 = document.querySelector("#btn8");
 // const btn16 = document.querySelector("#btn16");
 // const btn32 = document.querySelector("#btn32");
 
@@ -48,19 +60,19 @@ function firstButton() {
 }
 
 
-// btn8.addEventListener("click", function() {
-//     //document.getElementById(container).innerHTML = " ";
-//     for (let i = 0; i < 32; i++) {
-//     const row = document.createElement("div");
-//     row.classList.add("row");
-//     container.appendChild(row);
-//     for(let j = 0; j < 32; j++) {
-//         const column = document.createElement("div");
-//         column.classList.add("column");
-//         row.appendChild(column);
-//     }
-//     }
-// });
+btn8.addEventListener("click", function() {
+    removeGrid();
+    // for (let i = 0; i < 32; i++) {
+    // const row = document.createElement("div");
+    // row.classList.add("row");
+    // container.appendChild(row);
+    // for(let j = 0; j < 32; j++) {
+    //     const column = document.createElement("div");
+    //     column.classList.add("column");
+    //     row.appendChild(column);
+    // }
+    // }
+});
 
 btn16.addEventListener("click", function() {
     for (let i = 0; i < 3; i++) {
